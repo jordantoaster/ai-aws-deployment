@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "app_function": "ai_aws_deployment.app.api.app",
+        "aws_region": "eu-west-1",
+        "profile_name": "default",
+        "project_name": "ai-aws-deploy",
+        "runtime": "python3.7",
+        "s3_bucket": "periscope-ai-zappa"
+    }
+}

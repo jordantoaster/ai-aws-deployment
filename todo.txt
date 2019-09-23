@@ -1,0 +1,3 @@
+- class-ify, function-ify train.py
+- https://aws.amazon.com/cloudformation/
+    - cloud formation all assets on aws (after basic v1 in place)
