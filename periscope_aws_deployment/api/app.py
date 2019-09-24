@@ -1,22 +1,20 @@
 from flask import Flask, request, json
 import boto3
-import joblib
 import pickle
+import joblib
 
-BUCKET_NAME = 'periscope-ai-deploy'
-MODEL_FILE_NAME = 'model.pkl'
+BUCKET_NAME = 'periscope-aws-zappa'
+MODEL_FILE_NAME = 'model.joblib'
 
 app = Flask(__name__)
 S3 = boto3.client('s3', region_name='eu-west-1')
 
 def load_model(key):    
-    # Load model from S3 bucket
-    response = S3.get_object(Bucket=BUCKET_NAME, Key=key)
 
-    model_string = response['Body'].read()
-    
-    # Load pickle model
-    model = pickle.loads(model_string)
+    with open('model.joblib', 'wb') as f:
+        S3.download_fileobj(BUCKET_NAME, key, f)
+
+    model = joblib.load('model.joblib')
 
     return model
 
@@ -40,4 +38,4 @@ def index():
 
 if __name__ == '__main__':    
     # listen on all IPs 
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

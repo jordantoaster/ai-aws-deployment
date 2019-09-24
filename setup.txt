@@ -1,0 +1,29 @@
+Python 3.7 (Put in Path)
+Poetry (Put in PATH)
+    - Poetry new [project name]
+    - poetry add [package]
+    - poetry install - set up venv
+    - In power shell (Py shell not working in git bash)
+        - poetry shell
+        - code .
+        - this registers the env properly with VS code - avoids requiring another library to handle env management
+Generate AWS credentials locally
+    - stored in users/jorda/.aws/credentials (did NOT use, configured via command line)
+    - Use the CLI on AWS to Generate   
+        - ensure you always poetry shell pre commands in vs code.
+        - aws configure
+Zappa for API
+a
+
+Admin user
+    - Administrator - standard p
+    -  https://229081625704.signin.aws.amazon.com/console
+
+
+NOTE - had to change to a file download, as the pickled file could not be ready correctly
+    - tried both joblib and pickle
+    - various file encodings / decodings
+
+REFS
+https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2/
+https://aws.amazon.com/blogs/security/a-new-and-standardized-way-to-manage-credentials-in-the-aws-sdks/

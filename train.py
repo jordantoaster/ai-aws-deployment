@@ -1,6 +1,7 @@
 from sklearn import datasets
 from sklearn.ensemble import GradientBoostingClassifier
 import joblib
+import pickle
 
 # import data
 iris = datasets.load_iris()
@@ -14,4 +15,4 @@ clf = GradientBoostingClassifier(n_estimators=100, learning_rate=1.0, max_depth=
 clf.fit(X, Y)
 
 # save model
-joblib.dump(clf, 'models/model.joblib')
+joblib.dump(clf, 'periscope_aws_deployment/models/model.pkl')
